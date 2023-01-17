@@ -1,6 +1,7 @@
 const puppeteer = require("puppeteer-extra")
-const { executablePath } = require("puppeteer")
-const extraStealth = require("puppeteer-extra-plugin-stealth")
+const { executablePath, Page } = require("puppeteer")
+const extraStealth = require("puppeteer-extra-plugin-stealth");
+const {installMouseHelper} = require("./mouse")
 
 
 
@@ -25,6 +26,7 @@ async function init(mail) {
     })
 
     const tab = await browser.newPage()
+    await installMouseHelper(tab);
     await tab.goto("https://stay-playful.oreo.eu/ch/pre")
 
     await tab.waitForSelector("#first_name")
@@ -45,7 +47,7 @@ async function init(mail) {
     await sleep(2000)
     
     await tab.evaluate(() => {
-        window.scrollTo(0, document.body.scrollHeight);
+        //window.scrollTo(0, document.body.scrollHeight);
     })
 
     const frames = await tab.frames()
@@ -63,10 +65,10 @@ async function init(mail) {
     await captcha.waitForSelector(".recaptcha-checkbox")
     await captcha.click("#rc-anchor-container")
 
-    console.log("waiting for solver");
-    await tab.$$("pierce/button")
-    console.log("found!");
-    
+    await sleep(2000)
+
+    await tab.mouse.move(300, 700)
+    await tab.mouse.click(300, 700)    
 }
 
 function sleep(ms) {

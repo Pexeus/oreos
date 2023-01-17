@@ -1,2 +1,3 @@
-2023/01/09-23:21:57.400 13b0 Creating DB C:\Users\Liam\Documents\Git\hub\oreos\browserdata\Default\Extension Rules since it was missing.
-2023/01/09-23:21:57.423 13b0 Reusing MANIFEST C:\Users\Liam\Documents\Git\hub\oreos\browserdata\Default\Extension Rules/MANIFEST-000001
+2023/01/10-00:38:25.878 4264 Reusing MANIFEST C:\Users\Liam\Documents\Git\hub\oreos\browserdata\Default\Extension Rules/MANIFEST-000001
+2023/01/10-00:38:25.879 4264 Recovering log #3
+2023/01/10-00:38:25.879 4264 Reusing old log C:\Users\Liam\Documents\Git\hub\oreos\browserdata\Default\Extension Rules/000003.log 
